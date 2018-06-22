@@ -63,34 +63,7 @@ public class AcledFormatter {
 	}
 	
 	
-	public static void main(String[] args) {
-		
-		//String acledFile = "ACLED-Africa_2008-2018_upd-May19.txt";
-		String acledFile = "acled2018.txt";
-		
-		//String outFile = "ACLED-Africa_2008-2018_upd-May19-OUT.txt";
-		String outFile = "acled2018.out.txt";
-		
-		
-		AcledFormatter af = new AcledFormatter();
-		List<String> lines = af.getLines(acledFile);
-		
-		List<Integer> cols = new ArrayList<Integer>();
-		cols.add(AcledConstants.LONGITUDE);
-		cols.add(AcledConstants.LATITUDE);
-		lines = af.getColumns(lines.size(), cols, lines);
-					
-		try {
-			af.writeFile(outFile, lines);
-		} catch (IOException e) {
 
-			e.printStackTrace();
-		}
-		
-		
-		System.out.println("Done.");
-	}
-	
 	
 
 }
