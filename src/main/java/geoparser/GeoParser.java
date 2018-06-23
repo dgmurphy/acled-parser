@@ -58,7 +58,7 @@ public class GeoParser {
 	public static void main(String[] args) {
 		
 		String dataType = "pitf";   // or acled
-		String inputDir = "./pitf-csv"; 
+		String inputDir = "./input"; 
 		String outputDir = "./output/";  
 		
 		GeoParser gp = new GeoParser();
@@ -69,7 +69,7 @@ public class GeoParser {
 				     .filter(Files::isRegularFile)
 				     .collect(Collectors.toList());
 			
-			System.out.println("Found " + paths.size() + " input files.");
+			System.out.println("Found " + paths.size() + " input files.\n");
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
