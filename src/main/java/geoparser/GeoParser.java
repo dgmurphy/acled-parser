@@ -19,7 +19,12 @@ public class GeoParser {
 		
 		PitfFormatter pf = new PitfFormatter(outputDir);
 		for(Path path : inputPaths) {
-			pf.process(path);
+			try {
+				pf.process(path);
+			} catch (Exception e) {
+				System.out.println("Error processing " + path.toString());
+				e.printStackTrace();
+			}
 		}
 		
 	}
@@ -53,8 +58,8 @@ public class GeoParser {
 	public static void main(String[] args) {
 		
 		String dataType = "pitf";   // or acled
-		String inputDir = "./input";
-		String outputDir = "./output";
+		String inputDir = "./pitf-csv"; 
+		String outputDir = "./output/";  
 		
 		GeoParser gp = new GeoParser();
 		
@@ -87,7 +92,7 @@ public class GeoParser {
 		}
 		
 		
-		System.out.println("Done.");
+		System.out.println("\nDone.");
 	}
 
 }
